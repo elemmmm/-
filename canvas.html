@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #canvas {
+        border: 2px solid #ff0;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        let canteEle = document.getElementById('canvas');
+        //设置 canvas 画布宽度 和高度
+        canteEle.width = 600;
+        canteEle.height = 300;
+        //getContext  获取canvas 的上下文 有2d  /webgl
+        let ctx = canteEle.getContext('2d')
+        //strokeRect(x,y.width .height)方法用于描绘 边矩形
+        //ctx.strokeRect(25,25,60,100)
+        //fillRect(x,y,width,height) 方法用于填充矩形 
+        // ctx.fillRect(25,25,30,100)
+        //clearRect(x,y,width,height) 方法用于擦除制定位置像素点 
+        //ctx.clearRect(25,25,30,100)
+        //strokStyle= color 语法 用于设置描边的颜色 先设置画笔颜色 然后再描边 逻辑顺序
+        // ctx.strokeStyle = "#f00"
+        // ctx.strokeRect(25, 25, 60, 100)
+        // ctx.strokeRect(125, 25, 60, 100)
+        // //strokeText("text",x,y) /fillText()用于绘制描边文本
+        // ctx.font="0.5rem Microsoft YaHei"
+        // ctx.textAlign='left'
+        // ctx.strokeText("这是strokeText",25,25)
+        //.textAlign 属性 用于获取/设置文本水平对齐方式
+        // ctx.fillText("这是fill",25,25)
+        //.font 属性用于获取/设置文本样式, font="字号 字体" 相对于元素定位本身原点 对齐
+        /*-----------------------------------------------------*/
+        //路径 path()
+        /* 
+            路径的绘制步骤:
+            A.首先通过beginPath()方法开始一条新的路径
+            B 通过move ()方法将画笔移动指定位置
+            C通过相关的方法开始''绘制'路径,
+             >lineTo(x,y)可以指定线段的终点(起点)rect()方法绘制矩形等
+             >最后通过stroke()fill()进行描边或填充操作
+             */
+        //  ctx.beginPath()
+        //  ctx.lineTo(30,50)
+        //  ctx.lineTo(30,100)
+        //  //closePath()用于绘制封闭路径
+        //  ctx.lineTo(90,60)
+        //  ctx.closePath()
+        //  ctx.stroke()
+        //  rect()用于绘制矩形的路径 rect(x,y,width,height)
+        //  ctx.rect(30,30,300,200)
+        //  ctx.stroke()
+        let arr = [
+            {
+                num: 176,
+                content: "七七"
+            }, {
+                num: 176,
+                content: "可莉"
+            }, {
+                num: 16,
+                content: "德莉傻"
+            }]
+        ctx.beginPath()
+        ctx.strokeStyle = "#00a1ed"
+        ctx.strokeRect(25, 25, 0, 250)
+        ctx.strokeRect(25, canteEle.height - 25, 550, 0)
+        //设置柱状图的宽度
+        let Width = 50
+        //计算间隔的宽度
+        ctx.textAlign = 'center'
+        let space = Math.ceil(canteEle.width - Width * arr.length - 50) / (arr.length + 1)
+        arr.forEach((item, i) => {
+            //设置随机填充颜色
+            let x = (i * Width + (i + 1) * space + 25)
+            let y = (canteEle.height - item.num - 25)
+            // ctx.width 平均分配给 每个数据柱
+            ctx.fillStyle=(x,y,`rgb(${Math.ceil((Math.random()*255))},${Math.ceil((Math.random()*255))},${Math.ceil((Math.random()*255))})`)
+            ctx.fillRect(x, y, Width, item.num);
+            ctx.fillStyle="#666"
+            ctx.fillText(item.content, x + 25, y - 10)
+            ctx.fillText(item.content,x+25,canteEle.height-10)
+            ctx.fill()
+        })
+    </script>
+</body>
+
+</html>
