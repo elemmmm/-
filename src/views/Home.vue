@@ -3,8 +3,15 @@
     <!-- 顶部导航开始 -->
     <mt-header title="Fitness" class="header">
       <div slot="right" class="shortcut">
-        <router-link to="/register">注册</router-link>
-        <router-link to="/login">登录</router-link>
+        <!-- 顶部下啦选择框 -->
+        <div>
+          <div><img src="/src/assets/daohang.png" /></div>
+          <div><img src="/src/assets/daohang2.png" /></div>
+          <!-- 导航菜单 -->
+          <ul>
+            <li></li>
+          </ul>
+        </div>
       </div>
     </mt-header>
     <!-- 顶部导航结束 -->
@@ -17,7 +24,7 @@
     <!-- 面板区域开始 -->
     <div class="main">
       <mt-tab-container v-model="active">
-         <mt-tab-container-item id="1">1</mt-tab-container-item>
+        <mt-tab-container-item id="1">1</mt-tab-container-item>
         <mt-tab-container-item id="2">
           <!-- 单一文章信息开始 -->
           <div class="articleItem">
@@ -43,7 +50,6 @@
           </div>
           <!-- 单一文章信息结束 -->
         </mt-tab-container-item>
-       
       </mt-tab-container>
     </div>
     <!-- 面板区域结束 -->
@@ -57,12 +63,7 @@
           slot="icon"
           v-if="selectedTab == 'index'"
         />
-        <img
-          src="../assets/index_disabled.png"
-          alt=""
-          slot="icon"
-          v-else
-        />
+        <img src="../assets/index_disabled.png" alt="" slot="icon" v-else />
       </mt-tab-item>
       <mt-tab-item id="me">
         我的
@@ -78,54 +79,13 @@
     <!-- 底部选项卡结束 -->
   </div>
 </template>
-<style scoped>
-.header{
-  background-color: #564F5E;
-}
-.shortcut a {
-  color: #fff;
-  padding-left: 20px;
-}
-.main {
-  margin-bottom: 55px;
-}
-.articleItem{
-  padding:10px 0;
-  margin:0 10px;
-  border-bottom:1px solid #999;
-}
-.articleItem-header{
-  font-weight: 600;
-  font-size: 17px;
-  color: #1a1a1a;
-  line-height: 22px;
-}
-.articleItem-wrapper{
-  display: flex;
-  align-items: center;
-  padding-top: 10px;
-  width:100%;
-}
-.articleImg{
-  margin-right:15px;
-}
-.articleImg img{
-  width: 112px;
-  height: 74px;
-  border-radius: 5px;
-}
-.articleDes{
-  height: 65px;
-  font-size: 15px;
-  overflow: hidden;
-  font-weight: 400;
-  text-overflow: ellipsis;
-  line-height: 21px;
-  letter-spacing: normal;
-  color: #444;
-}
-</style>
 <script>
+import 'echarts/lib/echarts'
+// 引入柱状图
+import'echarts/lib/chart/bar'
+// 引入提示框和标题组件
+import'echarts/lib/component/tooltip'
+import'echarts/lib/component/title'
 export default {
   data() {
     return {
@@ -137,3 +97,50 @@ export default {
   },
 };
 </script>
+<style scoped>
+.header {
+  background-color: #564F5E;
+}
+.shortcut a {
+  color: #fff;
+  padding-left: 20px;
+}
+.main {
+  margin-bottom: 55px;
+}
+.articleItem {
+  padding: 10px 0;
+  margin: 0 10px;
+  border-bottom: 1px solid #999;
+}
+.articleItem-header {
+  font-weight: 600;
+  font-size: 17px;
+  color: #1a1a1a;
+  line-height: 22px;
+}
+.articleItem-wrapper {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  width: 100%;
+}
+.articleImg {
+  margin-right: 15px;
+}
+.articleImg img {
+  width: 112px;
+  height: 74px;
+  border-radius: 5px;
+}
+.articleDes {
+  height: 65px;
+  font-size: 15px;
+  overflow: hidden;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  line-height: 21px;
+  letter-spacing: normal;
+  color: #444;
+}
+</style>

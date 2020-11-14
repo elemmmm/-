@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import qs from 'qs'
+import { Popup } from 'mint-ui';
+Vue.component(Popup.name, Popup);
 
 //导入MintUI的所有组件
 import MintUI from 'mint-ui';
