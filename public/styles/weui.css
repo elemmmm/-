@@ -1,0 +1,68 @@
+.mint-header {
+    background-color: #564F5E;
+}
+
+.mint-button:not(.is-disabled):active::after {
+    opacity: .2/* .6 */
+}
+
+.mint-button--primary {
+    background-color: #564F5E;
+}
+
+.mint-button--primary.is-plain {
+    border: 1px solid #564F5E;
+    color: #564F5E
+}
+
+.mint-badge.is-primary {
+    background-color: #564F5E
+}
+
+.mint-switch-input:checked+.mint-switch-core {
+    border-color: #564F5E;
+    background-color: #564F5E;
+}
+
+.mint-navbar .mint-tab-item.is-selected {
+    border-bottom: 3px solid #564F5E;
+    color: #564F5E;
+}
+
+.mint-tabbar>.mint-tab-item.is-selected {
+    color: #564F5E;
+}
+
+.mint-searchbar-cancel {
+    color: #564F5E;
+}
+
+.mint-checkbox-input:checked+.mint-checkbox-core {
+    background-color: #564F5E;
+    border-color: #564F5E;
+}
+
+.mint-radio-input:checked+.mint-radio-core {
+    background-color: #564F5E;
+    border-color: #564F5E;
+}
+
+.mt-range-progress {
+    background-color: #564F5E;
+}
+
+.mt-progress-progress {
+    background-color: #564F5E;
+}
+
+.mint-msgbox-confirm {
+    color: #564F5E;
+}
+
+.mint-msgbox-confirm:active {
+    color: #564F5E;
+}
+
+.mint-datetime-action {
+    color: #564F5E;
+}

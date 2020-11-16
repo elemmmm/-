@@ -1,9 +1,7 @@
 <template>
   <div class="details">
     <!-- 顶部导航开始 -->
-    <mt-header title="Fitness" class="header" fixed>
-      <div slot="right" class="shortcut"></div>
-    </mt-header>
+    <header-top></header-top>
     <!-- 顶部导航结束-->
     <!-- 下拉选项 开始-->
     <div class="section">
@@ -18,6 +16,13 @@
         <span class="close" @click="closeMore">×</span>
       </div>
       <div class="down">
+        <div><a href="#">肌肉撕裂者</a></div>
+        <div><a href="#">肌肉撕裂者</a></div>
+        <div><a href="#">肌肉撕裂者</a></div>
+        <div><a href="#">肌肉撕裂者</a></div>
+        <div><a href="#">肌肉撕裂者</a></div>
+        <div><a href="#">肌肉撕裂者</a></div>
+        <div><a href="#">肌肉撕裂者</a></div>
         <div><a href="#">肌肉撕裂者</a></div>
       </div>
     </mt-popup>
@@ -36,19 +41,39 @@
         <p>腹肌撕裂者初级</p>
         <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
       </div>
+      <div>
+        <!-- v-for  获取数据  -->
+        <div><img src="../assets/01.jpg" /></div>
+        <p>腹肌撕裂者初级</p>
+        <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
+      </div>
+      <div>
+        <!-- v-for  获取数据  -->
+        <div><img src="../assets/01.jpg" /></div>
+        <p>腹肌撕裂者初级</p>
+        <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
+      </div>
+      <div>
+        <!-- v-for  获取数据  -->
+        <div><img src="../assets/01.jpg" /></div>
+        <p>腹肌撕裂者初级</p>
+        <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
+      </div>
     </div>
     <!-- 内容板块结束 -->
     <!--popup 子组件 跳转 -->
     <div class="popup_right">
       <mt-popup position="right" v-model="popupVisible_right">
-        <div v-if="1">
-          <img src="../assets/back (3).png" class="icon_image" />
-        </div>
-        <div v-else>
-          <img src="../assets/back (4).png" class="icon_image" />
+        <div>
+          <div v-if="1" @click="close_right">
+            <img src="../assets/back(3).png" class="icon_image" />
+          </div>
+          <div v-else>
+            <img src="../assets/back (4).png" class="icon_image" />
+          </div>
         </div>
         <div>
-          <p>腹肌撕裂初级</p>
+          <p class="title">腹肌撕裂初级</p>
           <p>4周.每周4天.每天30分钟</p>
           <!-- 计划分类 -->
           <ul class="jieshao">
@@ -61,28 +86,7 @@
       </mt-popup>
     </div>
     <!-- 底部选项卡开始 -->
-    <mt-tabbar v-model="selectedTab" fixed>
-      <mt-tab-item id="index">
-        首页
-        <img
-          src="../assets/index_enabled.png"
-          alt=""
-          slot="icon"
-          v-if="selectedTab == 'index'"
-        />
-        <img src="../assets/index_disabled.png" alt="" slot="icon" v-else />
-      </mt-tab-item>
-      <mt-tab-item id="me">
-        我的
-        <img
-          src="../assets/me_enabled.png"
-          alt=""
-          slot="icon"
-          v-if="selectedTab == 'me'"
-        />
-        <img src="../assets/me_disabled.png" alt="" slot="icon" v-else />
-      </mt-tab-item>
-    </mt-tabbar>
+    <footer-btm></footer-btm>
     <!-- 底部选项卡结束 -->
   </div>
 </template>
@@ -104,6 +108,10 @@ export default {
     };
   },
   methods: {
+    //关闭右弹窗
+    close_right() {
+      this.popupVisible_right = false;
+    },
     //打开 选项卡
     openMore() {
       this.popupVisible = true;
@@ -114,28 +122,9 @@ export default {
     },
   },
   mounted() {
-    var myChart = echarts.init(document.getElementById("main"));
     // 绘制图表
-    myChart.setOption({
-      title: {
-        text: "ECharts 入门示例",
-      },
-      tooltip: {},
-      xAxis: {
-        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
-      },
-      yAxis: {},
-      series: [
-        {
-          name: "销量",
-          type: "bar",
-          data: [5, 20, 36, 10, 10, 20],
-        },
-      ],
-    });
     let section = document.querySelectorAll(".content>div");
     section.forEach((item) => {
-      console.log(item);
       item.addEventListener("click", (e) => {
         e.preventDefault();
         //单击事件跳转子组件
@@ -148,13 +137,31 @@ export default {
 };
 </script>
 <style>
+.mint-header.is-fixed {
+  z-index: 3000 !important;
+}
+.popup_right .title + p{
+   font-size: 14px;
+  color: #e4e4e4;
+  padding-left: 60px;
+  padding-bottom: 10px;
+  font-style: italic;
+}
+.popup_right .title {
+  font-size: 22px;
+  color: #fff;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top:10px
+}
 .popup_right .jieshao span:hover {
   padding-bottom: 10px;
-  border-bottom: 1px solid #564f5e;
+  border-bottom: 1px solid #fff;
 }
 .popup_right .jieshao > li {
   width: 50%;
   text-align: center;
+  color: #e8e8e8;
   border-bottom: 1px solid #efefef;
   padding: 10px 0 10px 0;
 }
@@ -162,13 +169,14 @@ export default {
   display: flex;
 }
 .popup_right .icon_image {
-  width: 30px;
+  width: 25px;
   padding-left: 10px;
 }
 .popup_right .mint-popup-right {
   padding-top: 40px;
   padding-left: 20px;
   z-index: 4000 !important;
+  background:url("../assets/images/communitybg-sm.jpg")  center center;
 }
 .mint-popup-right {
   height: 100%;
@@ -185,23 +193,24 @@ export default {
 <style scoped>
 .details .content {
   width: 100%;
-  padding-top: 60px;
+  padding-top: 70px;
   padding-bottom: 55px;
 }
 .details .content p {
   top: 10px;
   z-index: 200;
   position: absolute;
-  font-size: 30px;
+  font-size: 20px;
   padding: 25px 0 0 20px;
 }
 .details .content p:last-child {
-  top: 80px;
-  font-size: 16px;
+  top: 50px;
+  font-size: 14px;
+  opacity: 0.75;
 }
 .details .content > div {
-  height: 150px;
-  border-radius: 10px;
+  height: 175px;
+  border-radius: 18px;
   position: relative;
   color: #e6e4e7;
   margin: 10px;
@@ -213,16 +222,21 @@ export default {
 }
 /* 下拉主显示框 */
 .details .section {
+  z-index: 100;
   position: fixed;
   top: 40px;
   width: 100%;
-  background: #efefef;
+  background: #e4e5e7;
   padding: 0 0 0px 10px;
+  border: 1px solid #e4e5e1;
+  z-index: 120;
 }
 .details .section > div {
   height: 28px;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 28px;
+  color: #333;
+  opacity: 0.8;
 }
 .details .section > div:last-child {
   position: absolute;
@@ -239,7 +253,7 @@ export default {
 }
 .drop-down .top > span:first-child {
   padding-left: 15px;
-  font-size: 20px;
+  font-size: 16px;
 }
 .drop-down .close {
   position: absolute;
@@ -264,16 +278,10 @@ export default {
   color: #333;
   padding: 10px;
   border-radius: 30px;
-  background: #efefef;
+  background: #efefe0;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 15px;
-}
-.mint-header.is-fixed {
-  z-index: 3000;
-}
-.header {
-  background-color: #564F5E;
 }
 .shortcut a {
   color: #fff;

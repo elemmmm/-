@@ -15,14 +15,9 @@ import Register from '../views/Register.vue';
 import Login from '../views/Login.vue';
 // 导入训练详情页
 import details from '../views/details'
-import details_z from'../views/details_z'
 Vue.use(VueRouter)
 const routes = [
   //训练详情页
-  {
-    path:"/details_z",
-    component:details_z
-  },
   // 训练页路由
   {
     path:"/details",

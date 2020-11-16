@@ -1,12 +1,7 @@
 <template>
   <div>
     <!-- 顶部导航开始 -->
-    <mt-header title="Fitness" class="header">
-      <div slot="right" class="shortcut">
-        <router-link to="/register">注册</router-link>
-        <router-link to="/login">登录</router-link>
-      </div>
-    </mt-header>
+    <header-top></header-top>
     <!-- 顶部导航结束 -->
     <!-- 顶部选项卡开始 -->
     <mt-navbar v-model="active">
@@ -240,43 +235,7 @@
     </div>
     <!-- 面板区域结束 -->
     <!-- 底部选项卡开始 -->
-    <mt-tabbar v-model="selectedTab" fixed>
-      <mt-tab-item id="index">
-        首页
-        <img
-          src="../assets/index_enabled.png"
-          alt=""
-          slot="icon"
-          v-if="selectedTab == 'index'"
-        />
-        <img
-          src="../assets/index_disabled.png"
-          alt=""
-          slot="icon"
-          v-else
-        />
-      </mt-tab-item>
-      <mt-tab-item id="play">
-        运动
-        <img
-          src="../assets/play_enabled.png"
-          alt=""
-          slot="icon"
-          v-if="selectedTab == 'play'"
-        />
-        <img src="../assets/play_disabled.png" alt="" slot="icon" v-else />
-      </mt-tab-item>
-      <mt-tab-item id="me">
-        我的
-        <img
-          src="../assets/me_enabled.png"
-          alt=""
-          slot="icon"
-          v-if="selectedTab == 'me'"
-        />
-        <img src="../assets/me_disabled.png" alt="" slot="icon" v-else />
-      </mt-tab-item>
-    </mt-tabbar>
+    <footer-btm></footer-btm>
     <!-- 底部选项卡结束 -->
   </div>
 </template>
