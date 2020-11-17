@@ -15,8 +15,18 @@ import Register from '../views/Register.vue';
 import Login from '../views/Login.vue';
 // 导入训练详情页
 import details from '../views/details'
+import echarts from '../components/echarts';
+import proupRight from '../components/poupright'
 Vue.use(VueRouter)
 const routes = [
+  {
+    path:'/poupright',
+    component:proupRight
+  },
+  {
+    path:'/echarts',
+    component:echarts
+  },
   //训练详情页
   // 训练页路由
   {

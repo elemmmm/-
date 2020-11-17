@@ -16,12 +16,15 @@ import MintUI from 'mint-ui';
 //导入MintUI的样式文件
 import 'mint-ui/lib/style.min.css';
 import '../public/styles/weui.css'
-
+///////////////////////////
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+///////////////////////////
 //通过Vue.use()方法将Mint UI注册为Vue的插件
 Vue.use(MintUI);
 //将header footer变为全局组件
-Vue.component('headerTop',header)
-Vue.component('footerBtm',footer)
+Vue.component('headerTop', header)
+Vue.component('footerBtm', footer)
 axios.defaults.baseURL = 'http://127.0.0.1'
 Vue.prototype.axios = axios;
 Vue.config.productionTip = false

@@ -1,3 +1,4 @@
+
 <template>
   <div class="details">
     <!-- 顶部导航开始 -->
@@ -61,41 +62,13 @@
       </div>
     </div>
     <!-- 内容板块结束 -->
-    <!--popup 子组件 跳转 -->
-    <div class="popup_right">
-      <mt-popup position="right" v-model="popupVisible_right">
-        <div>
-          <div v-if="1" @click="close_right">
-            <img src="../assets/back(3).png" class="icon_image" />
-          </div>
-          <div v-else>
-            <img src="../assets/back (4).png" class="icon_image" />
-          </div>
-        </div>
-        <div>
-          <p class="title">腹肌撕裂初级</p>
-          <p>4周.每周4天.每天30分钟</p>
-          <!-- 计划分类 -->
-          <ul class="jieshao">
-            <li><span>介绍</span></li>
-            <li><span>目录</span></li>
-          </ul>
-          <!-- 介绍详情 -->
-          <div id="main"></div>
-        </div>
-      </mt-popup>
-    </div>
+
     <!-- 底部选项卡开始 -->
     <footer-btm></footer-btm>
     <!-- 底部选项卡结束 -->
   </div>
 </template>
 <script>
-import echarts from "echarts";
-import "echarts/lib/chart/bar";
-// 引入提示框和标题组件
-import "echarts/lib/component/tooltip";
-import "echarts/lib/component/title";
 export default {
   data() {
     return {
@@ -104,14 +77,9 @@ export default {
       // 默认被选定的顶部选项卡
       selectedTab: "index",
       popupVisible: false,
-      popupVisible_right: true,
     };
   },
   methods: {
-    //关闭右弹窗
-    close_right() {
-      this.popupVisible_right = false;
-    },
     //打开 选项卡
     openMore() {
       this.popupVisible = true;
@@ -128,7 +96,7 @@ export default {
       item.addEventListener("click", (e) => {
         e.preventDefault();
         //单击事件跳转子组件
-        this.popupVisible_right = true;
+        this.$router.push('/poupright')
         //console.log("单击事件")
         //this.$router.push('/details_z')
       });
@@ -140,47 +108,7 @@ export default {
 .mint-header.is-fixed {
   z-index: 3000 !important;
 }
-.popup_right .title + p{
-   font-size: 14px;
-  color: #e4e4e4;
-  padding-left: 60px;
-  padding-bottom: 10px;
-  font-style: italic;
-}
-.popup_right .title {
-  font-size: 22px;
-  color: #fff;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  padding-top:10px
-}
-.popup_right .jieshao span:hover {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #fff;
-}
-.popup_right .jieshao > li {
-  width: 50%;
-  text-align: center;
-  color: #e8e8e8;
-  border-bottom: 1px solid #efefef;
-  padding: 10px 0 10px 0;
-}
-.popup_right ul {
-  display: flex;
-}
-.popup_right .icon_image {
-  width: 25px;
-  padding-left: 10px;
-}
-.popup_right .mint-popup-right {
-  padding-top: 40px;
-  padding-left: 20px;
-  z-index: 4000 !important;
-  background:url("../assets/images/communitybg-sm.jpg")  center center;
-}
-.mint-popup-right {
-  height: 100%;
-}
+
 .mint-popup {
   width: 100%;
   padding-bottom: 20px;
@@ -191,6 +119,14 @@ export default {
 }
 </style>
 <style scoped>
+.content {
+  background-color:azure;
+}
+#main {
+  width: 100%;
+  height: 400px;
+  margin-top: 25 px;
+}
 .details .content {
   width: 100%;
   padding-top: 70px;
@@ -228,7 +164,7 @@ export default {
   width: 100%;
   background: #e4e5e7;
   padding: 0 0 0px 10px;
-  border: 1px solid #e4e5e1;
+  border-bottom: 1px solid #ddd;
   z-index: 120;
 }
 .details .section > div {
