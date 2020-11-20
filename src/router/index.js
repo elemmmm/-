@@ -17,61 +17,67 @@ import Login from '../views/Login.vue';
 import details from '../views/details'
 import echarts from '../components/echarts';
 import proupRight from '../components/poupright'
+import poupdown from '../testing/poup_down'
 Vue.use(VueRouter)
 const routes = [
   {
-    path:'/poupright',
-    component:proupRight
+    path: '/poupdown',
+    component:poupdown
+
   },
   {
-    path:'/echarts',
-    component:echarts
+    path: '/poupright',
+    component: proupRight
+  },
+  {
+    path: '/echarts',
+    component: echarts
   },
   //训练详情页
   // 训练页路由
   {
-    path:"/details",
-    component:details
+    path: "/details",
+    component: details
   },
   {
-    path:'/cart',
-    component:Cart
+    path: '/cart',
+    component: Cart
   },
   {
-    path:'/swiper',
-    component:Swiper
+    path: '/swiper',
+    component: Swiper
   },
   {
-    path:'/me',
-    component:Me
+    path: '/me',
+    component: Me
   },
   {
-    path:'/navbar',
-    component:Navbar
+    path: '/navbar',
+    component: Navbar
   },
   {
-    path:'/header',
-    component:Header
+    path: '/header',
+    component: Header
   },
   {
-    path:'/button' ,
-    component:Button
+    path: '/button',
+    component: Button
   },
   {
-    path:'/field',
-    component:Field
+    path: '/field',
+    component: Field
   },
   {
     path: '/',
     component: Home
   },
   {
-    path:'/register',
-    component:Register
+    path: '/register',
+    component: Register
   },
   {
-    path:'/login',
-    component:Login
+    path: '/login',
+    component: Login
   },
   {
     path: '/about',

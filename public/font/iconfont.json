@@ -1,0 +1,100 @@
+{
+  "id": "2203438",
+  "name": "Fitness_icon",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "356478",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "986225",
+      "name": "微博",
+      "font_class": "weibo-copy",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "986277",
+      "name": "qq",
+      "font_class": "qq-copy-copy",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "1002153",
+      "name": "微博",
+      "font_class": "weibo1",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "1002158",
+      "name": "QQ",
+      "font_class": "qq",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "1232637",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "10905628",
+      "name": "微信",
+      "font_class": "weixin1",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "11169290",
+      "name": "微博",
+      "font_class": "weibo2",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "11758475",
+      "name": "微信",
+      "font_class": "weixin2",
+      "unicode": "e77e",
+      "unicode_decimal": 59262
+    },
+    {
+      "icon_id": "14055582",
+      "name": "微信",
+      "font_class": "weixin3",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "15055338",
+      "name": "微博",
+      "font_class": "weibo3",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "17446116",
+      "name": "微信",
+      "font_class": "tubiaozhizuomoban",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "1197999",
+      "name": "location_icon_Success",
+      "font_class": "locationiconsuccess",
+      "unicode": "e746",
+      "unicode_decimal": 59206
+    }
+  ]
+}

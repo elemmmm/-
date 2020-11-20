@@ -18,13 +18,9 @@
       </div>
       <div class="down">
         <div><a href="#">肌肉撕裂者</a></div>
-        <div><a href="#">肌肉撕裂者</a></div>
-        <div><a href="#">肌肉撕裂者</a></div>
-        <div><a href="#">肌肉撕裂者</a></div>
-        <div><a href="#">肌肉撕裂者</a></div>
-        <div><a href="#">肌肉撕裂者</a></div>
-        <div><a href="#">肌肉撕裂者</a></div>
-        <div><a href="#">肌肉撕裂者</a></div>
+        <div><a href="#">腹肌撕裂者</a></div>
+        <div><a href="#">胸肌撕裂者</a></div>
+        <div><a href="#">胸肌撕裂者</a></div>
       </div>
     </mt-popup>
     <!-- 下拉选项 结束-->
@@ -32,37 +28,25 @@
     <div class="content">
       <div>
         <!-- v-for  获取数据  -->
-        <div><img src="../assets/01.jpg" /></div>
+        <div><img src="../assets/02.jpg" /></div>
         <p>腹肌撕裂者初级</p>
         <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
       </div>
       <div>
         <!-- v-for  获取数据  -->
-        <div><img src="../assets/01.jpg" /></div>
-        <p>腹肌撕裂者初级</p>
+        <div><img src="../assets/05.png" /></div>
+        <p>腹肌撕裂者中级</p>
         <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
       </div>
       <div>
         <!-- v-for  获取数据  -->
         <div><img src="../assets/01.jpg" /></div>
-        <p>腹肌撕裂者初级</p>
+        <p>腹肌撕裂者高级</p>
         <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
       </div>
-      <div>
-        <!-- v-for  获取数据  -->
-        <div><img src="../assets/01.jpg" /></div>
-        <p>腹肌撕裂者初级</p>
-        <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
-      </div>
-      <div>
-        <!-- v-for  获取数据  -->
-        <div><img src="../assets/01.jpg" /></div>
-        <p>腹肌撕裂者初级</p>
-        <p>燃烧卡路里/<span>10分钟热身锻炼</span></p>
-      </div>
+     
     </div>
     <!-- 内容板块结束 -->
-
     <!-- 底部选项卡开始 -->
     <footer-btm></footer-btm>
     <!-- 底部选项卡结束 -->
@@ -90,13 +74,27 @@ export default {
     },
   },
   mounted() {
+    let  ovenPath= this.$route.path
+    let object = document.getElementsByClassName("mint-tabbar>mint-tab-item")
+    let arr=[...object]//语法糖
+    arr.map((item) => {
+       item.className="mint-tab-item"
+    if(this.$route.path=="/details"){
+      arr[1].className = "mint-tab-item is-selected"
+    }else if(this.$route.path=="/me"){
+      arr[2].className = "mint-tab-item is-selected"}
+      else{
+        arr[0].className = "mint-tab-item is-selected"
+      }
+       return item
+    });
     // 绘制图表
     let section = document.querySelectorAll(".content>div");
     section.forEach((item) => {
       item.addEventListener("click", (e) => {
         e.preventDefault();
         //单击事件跳转子组件
-        this.$router.push('/poupright')
+        this.$router.push("/poupright");
         //console.log("单击事件")
         //this.$router.push('/details_z')
       });
@@ -120,7 +118,7 @@ export default {
 </style>
 <style scoped>
 .content {
-  background-color:azure;
+  background-color: azure;
 }
 #main {
   width: 100%;
@@ -146,7 +144,7 @@ export default {
 }
 .details .content > div {
   height: 175px;
-  border-radius: 18px;
+  border-radius: 5px;
   position: relative;
   color: #e6e4e7;
   margin: 10px;
@@ -174,6 +172,7 @@ export default {
   color: #333;
   opacity: 0.8;
 }
+div.details{z-index: -1;}
 .details .section > div:last-child {
   position: absolute;
   right: 10px;

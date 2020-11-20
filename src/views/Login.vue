@@ -1,15 +1,21 @@
 <template>
-  <div>
+  <div class="login">
+   
     <!-- 顶部导航开始 -->
-    <mt-header title="学前端,到学问">
+    <mt-header title="Fitness For You">
       <router-link to="/" slot="left">
         <mt-button icon="back"></mt-button>
       </router-link>
       <router-link slot="right" to="/register">注册</router-link>
     </mt-header>
+    <!-- logo开始 -->
+     <div>
+      <img src="../assets/images/green.png" alt="">
+    </div>
+    <!-- logo结束 -->
     <!-- 顶部导航结束 -->
     <!-- 表单区域开始 -->
-    <div>
+    <div class="my_mt_field">
       <mt-field
         label="用户名"
         placeholder="请输入用户名"
@@ -26,11 +32,50 @@
         @blur.native.capture="checkPassword"
       >
       </mt-field>
-      <mt-button type="primary" size="large" @click="handle">快速登录</mt-button>
+      <mt-button type="primary" size="large" @click="handle">登录</mt-button>
+     <!-- 其他登录方式开始-->
+     <div class="my_ways">
+       <span class="iconfont icon-weixin1"></span>
+       <span class="iconfont icon-qq"></span>
+       <span class="iconfont icon-weibo"></span>
+       <!-- <img src="" alt=""> -->
+     </div>
+     <!-- 其他登录方式结束 -->
     </div>
     <!-- 表单区域结束 -->
   </div>
 </template>
+<style>
+/* 输入框 */
+.my_mt_field input{
+  /* border: 1px solid #666666; */
+  padding: 6px 0;
+  background: #f9f9f9;
+  font: 14px 'SF UI';
+}
+.my_mt_field a:nth-child(2) .mint-cell-wrapper{
+  border-bottom: 1px solid #dbdbdb ;
+}
+.my_mt_field input:focus{
+  box-shadow: 0 0 3px #53b981;
+}
+/* 登录按钮 */
+  .login img{
+    width: 25%;
+    margin:30px 0px 30px 125px;
+  }
+  /* 其他登录方式 */
+.my_ways span{
+  display: inline-block;
+  margin-top: 200px;
+  margin-left: 20px;
+  font-size: 30px;
+  color:#53b981
+}
+.my_ways span:first-child{
+  margin-left: 110px;
+}
+</style>
 <script>
 export default {
   data() {
